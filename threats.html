@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Threats | CyberShield</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">🛡 CyberShield</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="threats.html" class="active">Cyber Threats</a></li>
+                <li><a href="security.html">Security Tools</a></li>
+                <li><a href="investigation.html">Investigation Lab</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="threat-hero">
+        <p class="tagline">KNOW THE RISKS</p>
+        <h1>Common <span>Cyber Threats</span></h1>
+        <p>Understand online threats and learn how to protect yourself.</p>
+    </section>
+
+    <section class="threats-section">
+        <h2>Threats You Should Know</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🎣</div>
+                <h3 class="clickable-heading"
+                     onclick="showThreat('phishing')">
+                  Phishing Attacks
+                     </h3>
+                <p>Fraudulent emails or messages trick people into sharing passwords, OTPs or banking details.</p>
+                <p class="protection"><strong>Protection:</strong> Verify the sender and avoid suspicious links.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💳</div>
+                <h3 class="clickable-heading"
+                      onclick="showThreat('payment')">
+                  Online Payment Scams
+                   </h3>
+                <p>Scammers may use fake payment requests or impersonate trusted services to steal money.</p>
+                <p class="protection"><strong>Protection:</strong> Verify every payment request before approving it.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🪪</div>
+                <h3 class="clickable-heading"
+                    onclick="showThreat('identity')">
+                 Identity Theft
+                  </h3>
+                <p>Someone misuses personal information to impersonate another person or commit fraud.</p>
+                <p class="protection"><strong>Protection:</strong> Keep personal documents and details private.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🦠</div>
+                <h3 class="clickable-heading"
+                       onclick="showThreat('malware')">
+                    Malware
+                  </h3>
+                <p>Malicious software can damage devices, spy on activity or steal information.</p>
+                <p class="protection"><strong>Protection:</strong> Download apps only from trusted sources.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔓</div>
+                <h3 class="clickable-heading"
+                          onclick="showThreat('password')">
+                  Password Attacks
+                   </h3>
+                <p>Attackers may guess weak passwords or use stolen passwords to access accounts.</p>
+                <p class="protection"><strong>Protection:</strong> Use unique passwords and two-factor authentication.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3 class="clickable-heading"
+                        onclick="showThreat('social')">
+                  Social Media Scams
+                    </h3>
+                <p>Fake profiles and messages may be used to trick people into sharing money or information.</p>
+                <p class="protection"><strong>Protection:</strong> Verify profiles and avoid sharing sensitive information.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Threat Details Popup -->
+<div id="threatPopup" class="threat-popup">
+    <div class="popup-content">
+        <button class="close-btn" onclick="closeThreat()">
+            &times;
+        </button>
+
+        <h2 id="popupTitle">Threat Details</h2>
+        <p id="popupDescription"></p>
+
+        <h3>How to Stay Safe</h3>
+        <p id="popupSafety"></p>
+    </div>
+</div>
+
+    <section class="tips">
+        <h2>What Should You Do If You Face a Cyber Scam?</h2>
+        <div class="tips-list">
+            <p>✓ Stop communicating with the suspected scammer.</p>
+            <p>✓ Never share your OTP, PIN or password.</p>
+            <p>✓ Contact your bank immediately if money is involved.</p>
+            <p>✓ In India, report cybercrime at <strong>cybercrime.gov.in</strong> or call 1930 for financial cyber fraud.</p>
+        </div>
+    </section>
+
+    <section class="next-section">
+        <h2>Ready to Improve Your Online Safety?</h2>
+        <p>Explore the security tools and test your cyber safety knowledge.</p>
+        <a href="security.html" class="btn">Explore Security Tools →</a>
+    </section>
+
+    <footer>
+        <p>© 2026 CyberShield | Cyber Security Awareness Mini Project</p>
+        <p>Stay Alert. Stay Protected.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Privacy Investigation Lab | CyberShield</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .investigation-hero {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .investigation-hero h1 {
+            color: #35d9ff;
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .investigation-hero p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .case-info {
+            max-width: 1000px;
+            margin: 0 auto 25px;
+            padding: 20px;
+            background: #14243b;
+            border: 1px solid #284563;
+            border-radius: 12px;
+        }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .evidence-card {
+            background: #14243b;
+            border: 2px solid #284563;
+            border-radius: 12px;
+            padding: 22px;
+            transition: 0.25s;
+        }
+
+        .evidence-card.selected {
+            border-color: #35d9ff;
+            background: #19364c;
+        }
+
+        .evidence-card h3 {
+            color: #35d9ff;
+            margin-bottom: 12px;
+        }
+
+        .evidence-card p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .evidence-card label {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .evidence-card input {
+            width: 18px;
+            height: 18px;
+            accent-color: #35d9ff;
+        }
+
+        .investigation-actions {
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .investigation-actions button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 7px;
+            margin: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .investigate-btn {
+            background: #35d9ff;
+            color: #07111f;
+        }
+
+        .reset-btn {
+            background: #284563;
+            color: white;
+        }
+
+        .report {
+            display: none;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 25px;
+            background: #14243b;
+            border: 1px solid #35d9ff;
+            border-radius: 12px;
+            line-height: 1.8;
+        }
+
+        .report h2,
+        .report h3 {
+            color: #35d9ff;
+            margin-bottom: 10px;
+        }
+
+        .report ul {
+            padding-left: 22px;
+            margin-bottom: 20px;
+        }
+
+        .notice {
+            max-width: 1000px;
+            margin: 0 auto 35px;
+            padding: 0 20px;
+            color: #b8c8d9;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .investigation-hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">CyberShield</div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threats.html">Cyber Threats</a></li>
+            <li><a href="security.html">Security Tools</a></li>
+            <li><a href="investigation.html">Investigation Lab</a></li>
+        </ul>
+    </nav>
+
+    <section class="investigation-hero">
+        <h1>Cyber Privacy Investigation Lab</h1>
+        <p>
+            Investigate a fictional college student's public information.
+            Select evidence, connect the clues, and discover what information
+            could potentially be exposed.
+        </p>
+    </section>
+
+    <section class="case-info">
+        <h2>Case File: Student R-101</h2>
+        <p>
+            A fictional BCA student has shared some information online.
+            Your task is to investigate possible privacy risks using the
+            evidence below.
+        </p>
+        <p><strong>Important:</strong> All names and evidence in this case are fictional.</p>
+    </section>
+
+    <section class="evidence-grid">
+
+        <div class="evidence-card">
+            <h3>Clue A: Social Media Post</h3>
+            <p>
+                "Excited for our college fest tomorrow!
+                See you all there."
+            </p>
+            <label>
+                <input type="checkbox" value="post" class="clue">
+                Select this clue
+            </label>
+        </div>
+
+        <div class="evidence-card">
+            <h3>Clue B: College Notice</h3>
+            <p>
+                A public notice announces a college fest at
+                the Main Auditorium at 11 AM.
+            </p>
+            <label>
+                <input type="checkbox" value="notice" class="clue">
+                Select this clue
+            </label>
+        </div>
+
+        <div class="evidence-card">
+            <h3>Clue C: Public Profile</h3>
+            <p>
+                The profile displays a first name and the
+                course "BCA Student".
+            </p>
+            <label>
+                <input type="checkbox" value="profile" class="clue">
+                Select this clue
+            </label>
+        </div>
+
+        <div class="evidence-card">
+            <h3>Clue D: Public Photo</h3>
+            <p>
+                A photo contains a recognizable college building
+                in the background.
+            </p>
+            <label>
+                <input type="checkbox" value="photo" class="clue">
+                Select this clue
+            </label>
+        </div>
+
+    </section>
+
+    <div class="investigation-actions">
+        <button class="investigate-btn" onclick="investigate()">
+            Investigate Selected Clues
+        </button>
+
+        <button class="reset-btn" onclick="resetInvestigation()">
+            Reset Investigation
+        </button>
+    </div>
+
+    <section class="report" id="report" aria-live="polite">
+        <h2>Investigation Report</h2>
+        <button
+    type="button"
+    onclick="downloadInvestigationReport()"
+    style="
+        background: #00d9ff;
+        color: #071525;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 10px 0 20px;
+    ">
+    Download Investigation Report
+</button>
+        
+<div style="margin: 15px 0;">
+    <h3>Privacy Risk Level</h3>
+    <p id="riskLevel" style="font-size: 20px; font-weight: bold;">
+        Awaiting investigation
+    </p>
+    <p id="riskReason"></p>
+</div>
+
+        
+<h3>Evidence Connection Map</h3>
+
+<div id="connectionMap" style="
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 15px 0 25px;
+">
+</div>
+        
+<p id="connectionExplanation" style="
+    color: #d7e8f5;
+    line-height: 1.7;
+    margin: 10px 0 20px;
+"></p>
+
+
+        <p id="clueCount"></p>
+
+        <h3>Possible Information Exposure</h3>
+        <ul id="riskList"></ul>
+
+        <h3>Why These Clues Matter</h3>
+        <p id="explanation"></p>
+
+        <h3>Recommended Protection</h3>
+        <ul id="safetyList"></ul>
+    </section>
+
+    <p class="notice">
+        Educational simulation only. The results are rule-based examples,
+        not proof of an actual security incident. The page does not collect
+        real student information or contact any external service.
+    </p>
+
+    <footer>
+        <p>© 2026 CyberShield | Cyber Security Awareness Project</p>
+    </footer>
+
+    <script>
+        const checkboxes = document.querySelectorAll(".clue");
+
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener("change", function () {
+                checkbox.closest(".evidence-card")
+                    .classList.toggle("selected", checkbox.checked);
+            });
+        });
+
+        function investigate() {
+            const selected = Array.from(checkboxes)
+                .filter(function (checkbox) {
+                    return checkbox.checked;
+                })
+                .map(function (checkbox) {
+                    return checkbox.value;
+                });
+
+            const report = document.getElementById("report");
+            const riskList = document.getElementById("riskList");
+            const safetyList = document.getElementById("safetyList");
+
+            riskList.innerHTML = "";
+            safetyList.innerHTML = "";
+
+            if (selected.length === 0) {
+                report.style.display = "block";
+                document.getElementById("clueCount").textContent =
+                    "Please select at least one clue before starting.";
+                document.getElementById("explanation").textContent =
+                    "No clues were selected, so no analysis can be performed.";
+                report.scrollIntoView({ behavior: "smooth" });
+                return;
+            }
+
+            
+const connectionMap = document.getElementById("connectionMap");
+connectionMap.innerHTML = "";
+
+const connectionExplanation = document.getElementById("connectionExplanation");
+
+const connections = [];
+
+if (selected.includes("post") && selected.includes("notice")) {
+    connections.push(
+        "Social Media Post + College Notice: These clues may connect a student's planned event attendance with the event's published time and venue."
+    );
+}
+
+if (selected.includes("profile") && selected.includes("photo")) {
+    connections.push(
+        "Public Profile + Public Photo: These clues may help connect a profile with a recognizable college location."
+    );
+}
+
+if (selected.includes("profile") && selected.includes("post")) {
+    connections.push(
+        "Public Profile + Social Media Post: These clues may connect a person's profile with their publicly shared activity."
+    );
+}
+
+if (connections.length === 0) {
+    connectionExplanation.textContent =
+        "No predefined connection found for this selection. Try Social Media Post + College Notice, or Public Profile + Public Photo.";
+} else {
+    connectionExplanation.textContent = connections.join(" ");
+}
+
+
+selected.forEach(function (clue) {
+    const labels = {
+        post: "Social Media Post",
+        notice: "College Notice",
+        profile: "Public Profile",
+        photo: "Public Photo"
+    };
+
+    const node = document.createElement("span");
+    node.textContent = labels[clue];
+    node.style.cssText =
+        "padding:10px 14px; border:1px solid #35d9ff; " +
+        "border-radius:8px; color:#35d9ff; background:#19364c;";
+
+    connectionMap.appendChild(node);
+});
+
+
+            const risks = [];
+            
+let riskScore = 0;
+
+if (selected.includes("post") && selected.includes("notice")) {
+    riskScore += 2;
+}
+
+if (selected.includes("profile") && selected.includes("photo")) {
+    riskScore += 2;
+}
+
+if (selected.includes("profile") && selected.includes("post")) {
+    riskScore += 1;
+}
+
+if (selected.length >= 3) {
+    riskScore += 1;
+}
+
+const riskLevel = document.getElementById("riskLevel");
+const riskReason = document.getElementById("riskReason");
+
+if (riskScore >= 4) {
+    riskLevel.textContent = "High — Multiple clues are connected";
+    riskReason.textContent =
+        "Several selected clues create overlapping privacy risks. Review which information needs to remain public.";
+} else if (riskScore >= 2) {
+    riskLevel.textContent = "Medium — Some clues are connected";
+    riskReason.textContent =
+        "The selected combination may reveal additional context. Review the connected information.";
+} else {
+    riskLevel.textContent = "Low — Limited predefined connections";
+    riskReason.textContent =
+        "Few predefined connections were found. This does not guarantee that the information is safe.";
+}
+
+            const safety = [];
+            let explanation = "";
+            
+
+
+if (riskScore >= 4) {
+    riskLevel.textContent = "High — Multiple clues are connected";
+    riskReason.textContent =
+        "Several selected clues create overlapping privacy risks.";
+} else if (riskScore >= 2) {
+    riskLevel.textContent = "Medium — Some clues are connected";
+    riskReason.textContent =
+        "The selected combination may reveal additional context.";
+} else {
+    riskLevel.textContent = "Low — Limited predefined connections";
+    riskReason.textContent =
+        "Few predefined connections were found. This does not guarantee that the information is safe.";
+}
+
+
+            if (selected.includes("post")) {
+                risks.push(
+                    "The post reveals possible attendance at an upcoming event."
+                );
+                safety.push(
+                    "Avoid publicly sharing detailed plans before an event."
+                );
+            }
+
+            if (selected.includes("notice")) {
+                risks.push(
+                    "The notice reveals the event's scheduled time and venue."
+                );
+                safety.push(
+                    "Consider whether public event details need to be combined with personal posts."
+                );
+            }
+
+            if (selected.includes("profile")) {
+                risks.push(
+                    "The profile may help connect a person with a course or student community."
+                );
+                safety.push(
+                    "Limit unnecessary personal details on public profiles."
+                );
+            }
+
+            if (selected.includes("photo")) {
+                risks.push(
+                    "The background may reveal a recognizable place."
+                );
+                safety.push(
+                    "Check photo backgrounds before publishing images."
+                );
+            }
+
+            if (selected.includes("post") && selected.includes("notice")) {
+                explanation +=
+                    "The post and notice together connect a possible event attendance with a scheduled venue and time. They do not prove the student will attend. ";
+            }
+
+            if (selected.includes("profile") && selected.includes("photo")) {
+                explanation +=
+                    "The profile and recognizable background may help viewers connect a person with a course or location. ";
+            }
+
+            if (selected.length >= 3) {
+                explanation +=
+                    "Combining several clues can reveal more context than viewing each item separately. The actual risk depends on what the clues reliably establish. ";
+            }
+
+            if (explanation === "") {
+                explanation =
+                    "The selected clue provides limited context on its own. More evidence may change the assessment, but assumptions should not be treated as facts.";
+            }
+
+            document.getElementById("clueCount").textContent =
+                "You selected " + selected.length + " of 4 clues.";
+
+            document.getElementById("explanation").textContent = explanation;
+
+            risks.forEach(function (risk) {
+                const item = document.createElement("li");
+                item.textContent = risk;
+                riskList.appendChild(item);
+            });
+
+            safety.forEach(function (tip) {
+                const item = document.createElement("li");
+                item.textContent = tip;
+                safetyList.appendChild(item);
+            });
+
+            report.style.display = "block";
+            report.scrollIntoView({ behavior: "smooth" });
+        }
+
+        function resetInvestigation() {
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = false;
+                checkbox.closest(".evidence-card")
+                    .classList.remove("selected");
+            });
+
+            document.getElementById("report").style.display = "none";
+        }
+        
+function downloadInvestigationReport() {
+    const riskLevel = document.getElementById("riskLevel").innerText;
+    const riskReason = document.getElementById("riskReason").innerText;
+    const connectionExplanation =
+        document.getElementById("connectionExplanation").innerText;
+    const clueCount = document.getElementById("clueCount").innerText;
+    const riskList = document.getElementById("riskList").innerText;
+    const explanation = document.getElementById("explanation").innerText;
+    const safetyList = document.getElementById("safetyList").innerText;
+
+    const selectedClues = Array.from(
+        document.querySelectorAll('input[type="checkbox"]:checked')
+    ).map(function (checkbox) {
+        return checkbox.parentElement.innerText.trim();
+    });
+
+    const reportText = `
+CYBERSHIELD
+INVESTIGATION LAB REPORT
+========================================
+
+Case ID: Student R-101
+Report Date: ${new Date().toLocaleString()}
+
+PRIVACY RISK LEVEL
+${riskLevel}
+
+Risk Explanation:
+${riskReason}
+
+SELECTED CLUES
+${selectedClues.length ? selectedClues.join("\n") : "No clues selected"}
+
+CLUE SUMMARY
+${clueCount}
+
+EVIDENCE CONNECTION MAP
+${Array.from(document.getElementById("connectionMap").children)
+    .map(function (node) {
+        return node.innerText;
+    }).join("\n")}
+
+CONNECTION EXPLANATION
+${connectionExplanation}
+
+POSSIBLE INFORMATION EXPOSURE
+${riskList || "No information listed"}
+
+WHY THESE CLUES MATTER
+${explanation}
+
+RECOMMENDED PROTECTION
+${safetyList || "No recommendations listed"}
+
+========================================
+Educational simulation only.
+This report does not verify a real person's
+identity, location, activity, or security risk.
+`;
+
+    const file = new Blob([reportText], {
+        type: "text/plain;charset=utf-8"
+    });
+
+    const fileURL = URL.createObjectURL(file);
+    const link = document.createElement("a");
+
+    link.href = fileURL;
+    link.download = "CyberShield_Investigation_Report.txt";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(fileURL);
+}
+
+    </script>
+
+</body>
+</html>

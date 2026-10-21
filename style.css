@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07111f;
+    color: #f1f5f9;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #0b192b;
+    border-bottom: 1px solid #1e3652;
+}
+
+.logo {
+    color: #35d9ff;
+    font-size: 25px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.navbar a {
+    color: #dbeafe;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #35d9ff;
+}
+
+.hero {
+    min-height: 460px;
+    padding: 70px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(120deg, #07111f, #102c48);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tagline {
+    color: #35d9ff;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #35d9ff;
+}
+
+.description {
+    color: #bdcce0;
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #16bfe8;
+    color: #07111f;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px 5px 5px 0;
+}
+
+.btn:hover {
+    background: #7be8ff;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #35d9ff;
+    color: #35d9ff;
+}
+
+.btn-outline:hover {
+    background: #12304a;
+}
+
+.hero-icon {
+    text-align: center;
+    min-width: 250px;
+    padding: 35px;
+    border: 1px solid #245174;
+    border-radius: 20px;
+    background: #10243a;
+}
+
+.shield {
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+
+.hero-icon h3 {
+    color: #35d9ff;
+    margin-bottom: 8px;
+}
+
+.hero-icon p {
+    color: #bdcce0;
+}
+
+.awareness,
+.tips {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.awareness h2,
+.tips h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.section-description {
+    color: #bdcce0;
+    margin-bottom: 35px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #102035;
+    padding: 30px 22px;
+    border: 1px solid #213c57;
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #35d9ff;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: #35d9ff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #bdcce0;
+}
+
+.tips {
+    background: #0b192b;
+}
+
+.tips-list {
+    max-width: 650px;
+    margin: 25px auto 0;
+    text-align: left;
+}
+
+.tips-list p {
+    background: #10243a;
+    border-left: 3px solid #35d9ff;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #050c16;
+    color: #a9bdd3;
+    border-top: 1px solid #1e3652;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 6%;
+    }
+
+    .hero-icon {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .awareness,
+    .tips {
+        padding: 40px 6%;
+    }
+}
+
+<!--threats page css -->
+.threat-hero {
+    text-align: center;
+    padding: 65px 8%;
+    background: linear-gradient(120deg, #07111f, #102c48);
+}
+
+.threat-hero h1 {
+    font-size: clamp(32px, 4vw, 46px);
+    margin: 12px 0;
+}
+
+.threat-hero h1 span {
+    color: #35d9ff;
+}
+
+.threat-hero > p:last-child {
+    color: #bdcce0;
+}
+
+.threats-section {
+    padding: 55px 8%;
+    text-align: center;
+}
+
+.threats-section > h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.protection {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid #29435c;
+    color: #b8d4e8;
+    font-size: 14px;
+}
+
+.protection strong {
+    color: #35d9ff;
+}
+
+.next-section {
+    padding: 50px 8%;
+    text-align: center;
+    background: #102035;
+}
+
+.next-section h2 {
+    margin-bottom: 12px;
+}
+
+.next-section p {
+    color: #bdcce0;
+    margin-bottom: 22px;
+}
+
+@media (max-width: 768px) {
+    .threat-hero,
+    .threats-section,
+    .next-section {
+        padding: 40px 6%;
+    }
+}
+
+
+<!-- security page css -->
+
+.tool-section,
+.quiz-section {
+    padding: 45px 8%;
+}
+
+.tool-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    background: #102035;
+    border: 1px solid #29435c;
+    border-radius: 14px;
+}
+
+.tool-card h2 {
+    margin-bottom: 10px;
+}
+
+.tool-card > p {
+    color: #bdcce0;
+    margin-bottom: 18px;
+}
+
+.tool-card label {
+    display: block;
+    text-align: left;
+    margin: 15px 0 8px;
+}
+
+.tool-card input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #42617e;
+    border-radius: 6px;
+    background: #07111f;
+    color: white;
+    font-size: 16px;
+}
+
+.tool-result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0b192b;
+    border-radius: 8px;
+    color: #35d9ff;
+    font-weight: bold;
+}
+
+.small-note {
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.quiz-section > h2,
+.quiz-section > p {
+    text-align: center;
+}
+
+.question {
+    max-width: 750px;
+    margin: 22px auto;
+    padding: 22px;
+    border: 1px solid #29435c;
+    background: #102035;
+    border-radius: 10px;
+}
+
+.question > p {
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.question label {
+    display: block;
+    color: #bdcce0;
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+.question input {
+    margin-right: 8px;
+    accent-color: #35d9ff;
+}
+
+.quiz-section button {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .tool-section,
+    .quiz-section {
+        padding: 30px 5%;
+    }
+
+    .tool-card {
+        padding: 22px;
+    }
+}
+
+
+/* Clickable Threat Headings */
+
+.clickable-heading {
+    cursor: pointer;
+    color: #35d9ff;
+    transition: color 0.3s;
+}
+
+.clickable-heading:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Threat Details Popup */
+
+.threat-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup-content {
+    position: relative;
+    background: #102035;
+    border: 1px solid #35d9ff;
+    border-radius: 14px;
+    padding: 35px;
+    width: 100%;
+    max-width: 550px;
+    color: #f1f5f9;
+}
+
+.popup-content h2 {
+    color: #35d9ff;
+    margin-bottom: 18px;
+    padding-right: 20px;
+}
+
+.popup-content h3 {
+    color: #35d9ff;
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+.popup-content p {
+    color: #bdcce0;
+    line-height: 1.8;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #35d9ff;
+}
+
